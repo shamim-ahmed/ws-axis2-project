@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="soap-ws" default="package">
+	<property file="${project.dir}/src/main/ant/build.properties"/>
+
+	<target name="clean">
+		<delete dir="${project.dir}/target/classes" failonerror="false"/>
+		<mkdir dir="${project.dir}/target/classes"/>
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac srcdir="${project.dir}/src/main/java" destdir="${project.dir}/target/classes" includeantruntime="false">
+			<classpath>
+				<fileset dir="${axis2.home}/lib" includes="*.jar"/>
+				<fileset dir="${project.dir}/target/${project.name}-${project.version}/WEB-INF/lib" includes="*.jar"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="package" depends="compile">
+		<mkdir dir="${project.dir}/target/${service.name}"/>
+
+		<!-- copy the class files -->
+		<copy todir="${project.dir}/target/${service.name}">
+			<fileset dir="${project.dir}/target/${project.name}-${project.version}/WEB-INF/classes" excludes="**/*.class"/>
+	    <fileset dir="${project.dir}/target/classes"/>
+		</copy>
+
+		<!-- copy services.xml -->
+		<mkdir dir="${project.dir}/target/${service.name}/META-INF"/>
+		<copy todir="${project.dir}/target/${service.name}/META-INF">
+			<fileset dir="${project.dir}/target/${project.name}-${project.version}/META-INF" includes="services.xml"/>
+		</copy>
+		
+		<antcall target="copy-security-config"/>
+
+		<!-- copy the keystore and properties file -->
+		<copy todir="${project.dir}/target/${service.name}">
+			<fileset dir="${project.dir}/src/main/keystore"/>
+		</copy>
+
+		<!-- copy the jar files -->
+		<mkdir dir="${project.dir}/target/${service.name}/lib"/>
+		<copy todir="${project.dir}/target/${service.name}/lib">
+			<fileset dir="${project.dir}/target/${project.name}-${project.version}/WEB-INF/lib" 
+				       includes="${dist.jar.file.names}"/>
+		</copy>
+
+		<!-- package the aar file -->
+		<jar jarfile="${project.dir}/target/${service.name}.aar">
+			<fileset dir="${project.dir}/target/${service.name}"/>
+		</jar>
+	</target>
+	
+	<target name="copy-security-config" if="security.mode">
+		<copy todir="${project.dir}/target/${service.name}/META-INF" overwrite="true" failonerror="false">
+		  <fileset dir="${project.dir}/src/main/axis2/${security.mode}" includes="services.xml"/>
+		</copy>
+	</target>
+</project>
+

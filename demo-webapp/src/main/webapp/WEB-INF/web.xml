@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <display-name>demo-webapp</display-name>
+  
+  <context-param>
+    <param-name>service-uri</param-name>
+    <param-value>http://localhost:8080/axis2/services/portalservice</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>config-dir</param-name>
+    <param-value>/WEB-INF/axis2-config</param-value>
+  </context-param>
+  
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <listener>
+    <listener-class>comp.mq.edu.itec833.listener.CustomContextListener</listener-class>
+  </listener>
+  
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://www.example.com/custom-tags</taglib-uri>
+      <taglib-location>/WEB-INF/custom-tags.tld</taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>

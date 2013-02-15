@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+               
+<struts>
+  <package name="default" namespace="/demo/default" extends="struts-default">
+    <!--  login -->
+    <action name="login" class="comp.mq.edu.itec833.struts.action.LoginAction">
+      <result name="success">/index.jsp</result>
+      <result name="input">/index.jsp?error=auth</result>
+    </action>
+    
+    <!-- logout -->
+    <action name="logout" class="comp.mq.edu.itec833.struts.action.LogoutAction">
+      <result name="success">/index.jsp</result>
+      <result name="error">/index.jsp</result>
+    </action>
+    
+    <!--  registration -->
+    <action name="showRegisterForm">
+      <result>/pages/registerForm.jsp</result>
+    </action>
+    
+    <action name="register" class="comp.mq.edu.itec833.struts.action.RegisterAction">
+      <result name="success">/pages/registrationSuccess.jsp</result>
+      <result name="input">/pages/registerForm.jsp</result>
+      <result name="error">/pages/registerForm.jsp</result>      
+    </action>
+    
+    <!--  display tags -->
+    <action name="displayTags" class="comp.mq.edu.itec833.struts.action.DisplayTagsAction">
+      <result>/pages/displayTags.jsp</result>
+    </action>
+    
+    <!--  add tag -->
+    <action name="showAddTagForm">
+      <result>/pages/addTagForm.jsp</result>
+    </action>
+    
+    <action name="addTag" class="comp.mq.edu.itec833.struts.action.AddTagAction">
+      <result name="success">/pages/addTagSuccess.jsp</result>
+      <result name="input">/pages/addTagForm.jsp</result>
+      <result name="error">/pages/addTagError.jsp</result>
+    </action>
+    
+    <!--  remove tag -->
+    <action name="showRemoveTagForm">
+      <result>/pages/removeTagForm.jsp</result>    
+    </action>
+      
+    <action name="removeTag" class="comp.mq.edu.itec833.struts.action.RemoveTagAction">
+      <result name="success">/pages/removeTagSuccess.jsp</result>
+      <result name="input">/pages/removeTagForm.jsp</result>
+      <result name="error">/pages/removeTagError.jsp</result>
+    </action>  
+    
+    <!-- show news -->
+    <action name="showNewsSearchForm">
+      <result>/pages/newsSearchForm.jsp</result>
+    </action>
+    
+    <action name="searchNews" class="comp.mq.edu.itec833.struts.action.FetchNewsAction">
+      <result>/pages/newsSearchResult.jsp</result>
+    </action>
+      
+    <!-- show videos -->
+    <action name="showVideoSearchForm">
+      <result>/pages/videoSearchForm.jsp</result>
+    </action>
+    
+    <action name="searchVideos" class="comp.mq.edu.itec833.struts.action.FetchVideosAction">
+      <result>/pages/videoSearchResult.jsp</result>
+    </action>
+    
+    <!-- show tweets -->
+    <action name="showTweetSearchForm">
+      <result>/pages/tweetSearchForm.jsp</result>
+    </action>
+    
+    <action name="searchTweets" class="comp.mq.edu.itec833.struts.action.FetchTweetsAction">
+      <result>/pages/tweetSearchResult.jsp</result>
+    </action>
+    
+    <!-- show photos -->
+    <action name="showPhotoSearchForm">
+      <result>/pages/photoSearchForm.jsp</result>
+    </action>
+    
+    <action name="searchPhotos" class="comp.mq.edu.itec833.struts.action.FetchPhotosAction">
+      <result>/pages/photoSearchResult.jsp</result>
+    </action>
+    
+    <!-- show forecast -->
+    <action name="showForecastForm">
+      <result>/pages/forecastForm.jsp</result>
+    </action>
+    
+    <action name="fetchForecast" class="comp.mq.edu.itec833.struts.action.FetchForecastAction">
+      <result name="success">/pages/forecast.jsp</result>
+      <result name="input">/pages/forecastForm.jsp</result>   
+    </action>
+  </package>
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="demo-webapp" default="package">  
+	<property file="${project.dir}/src/main/ant/build.properties"/>
+	
+  <target name="package">
+    <delete file="${project.dir}/target/${project.name}-${project.version}.war"/>
+    
+    <!-- copy the jar files -->
+    <copy todir="${project.dir}/target/${project.name}-${project.version}/WEB-INF/lib">
+      <fileset dir="${axis2.home}/lib" includes="*.jar"/>
+    </copy>
+  	
+  	<antcall target="copy-security-config"/>
+  	
+    <!-- package the war file -->
+    <war basedir="${project.dir}/target/${project.name}-${project.version}"
+         destfile="${project.dir}/target/${project.name}.war"/>
+  </target>
+	
+	<target name="copy-security-config" if="security.mode">
+		<copy todir="${project.dir}/target/${project.name}-${project.version}/WEB-INF/axis2-config/conf" 
+			    failonerror="false" overwrite="true">
+			<fileset dir="${project.dir}/src/main/axis2/${security.mode}" includes="axis2.xml"/>
+		</copy>
+	</target>
+</project>
+

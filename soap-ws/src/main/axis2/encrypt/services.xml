@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service>
+	<operation name="register">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="login">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="logout">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="addTag">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="removeTag">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="getTags">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="getTweets">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="getVideos">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="getNews">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+	
+	<operation name="getPhotos">
+	    <messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<operation name="getForecast">
+		<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</operation>
+
+	<parameter name="ServiceClass" locked="false">comp.mq.edu.itec833.Portal
+	</parameter>
+	
+	<module ref="rampart" />
+
+	<parameter name="InflowSecurity">
+		<action>
+			<items>Encrypt</items>
+			<passwordCallbackClass>comp.mq.edu.itec833.handler.PasswordCallbackHandler</passwordCallbackClass>
+			<decryptionPropFile>service.properties</decryptionPropFile>
+		</action>
+	</parameter>
+
+	<parameter name="OutflowSecurity">
+		<action>
+			<items>Encrypt</items>
+			<encryptionUser>client</encryptionUser>
+			<encryptionPropFile>service.properties</encryptionPropFile>
+		</action>
+	</parameter>
+</service>
