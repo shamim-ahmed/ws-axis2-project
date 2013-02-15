@@ -14,7 +14,7 @@ import comp.mq.edu.itec833.struts.action.util.PortalFacade;
 
 /**
  * The action that deals with login functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class LoginAction extends ActionSupport implements SessionAware {

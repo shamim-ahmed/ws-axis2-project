@@ -17,7 +17,7 @@ import comp.mq.edu.itec833.util.ContentType;
 
 /**
  * The action that deals with fetch photo functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class FetchPhotosAction extends ActionSupport implements RequestAware, SessionAware {

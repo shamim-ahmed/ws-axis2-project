@@ -15,7 +15,7 @@ import comp.mq.edu.itec833.manager.HttpManager;
 
 /**
  * This class fetches content from Twitter API
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class TwitterSearchManager implements ContentManager {

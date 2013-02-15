@@ -15,7 +15,7 @@ import comp.mq.edu.itec833.manager.HttpManager;
 
 /**
  * This class contains the logic of invoking the Flickr API
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class FlickrSearchManager implements ContentManager {

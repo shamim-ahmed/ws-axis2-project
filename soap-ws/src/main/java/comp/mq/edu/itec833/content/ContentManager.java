@@ -2,7 +2,7 @@ package comp.mq.edu.itec833.content;
 
 /**
  * The interface that all search managers implement
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public interface ContentManager {

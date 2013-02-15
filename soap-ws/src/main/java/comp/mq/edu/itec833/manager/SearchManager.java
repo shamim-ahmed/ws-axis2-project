@@ -30,7 +30,7 @@ import comp.mq.edu.itec833.util.XMLUtil;
  * This class initiates a search using the API of an external content provider. It also parses the XML result and
  * restructures it to a standard format that the client can understand.
  * 
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class SearchManager {

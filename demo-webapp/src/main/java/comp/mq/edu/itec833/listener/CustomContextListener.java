@@ -9,7 +9,7 @@ import comp.mq.edu.itec833.struts.action.util.PortalFacade;
 /**
  * The context listener for demo webapp. It adds the PortalFacade object to the application context, which
  * is then accessed by all struts actions.
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class CustomContextListener implements ServletContextListener {

@@ -24,7 +24,7 @@ import comp.mq.edu.itec833.struts.action.util.PortalFacade;
 
 /**
  * The action that deals with display tag functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class DisplayTagsAction extends ActionSupport implements SessionAware, RequestAware {

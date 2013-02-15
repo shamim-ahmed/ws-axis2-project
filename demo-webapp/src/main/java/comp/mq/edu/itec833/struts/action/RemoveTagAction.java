@@ -13,7 +13,7 @@ import comp.mq.edu.itec833.struts.action.util.PortalFacade;
 
 /**
  * The action that deals with remove tag functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class RemoveTagAction extends ActionSupport implements SessionAware {

@@ -30,7 +30,7 @@ import comp.mq.edu.itec833.util.XMLUtil;
 
 /**
  * This class fetches weather forecast from external forecast provider (GlobalWeather)
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class ForecastManager {

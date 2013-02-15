@@ -5,7 +5,7 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 /**
  * A jsp tag that retrieves webapp name from JSP file
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class GetWebappNameTag extends SimpleTagSupport {

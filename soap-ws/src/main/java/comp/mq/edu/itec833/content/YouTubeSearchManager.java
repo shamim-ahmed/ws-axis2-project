@@ -15,7 +15,7 @@ import comp.mq.edu.itec833.manager.HttpManager;
 
 /**
  * This class fetches content from the YouTube API
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class YouTubeSearchManager implements ContentManager {

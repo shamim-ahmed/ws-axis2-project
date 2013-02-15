@@ -17,7 +17,7 @@ import comp.mq.edu.itec833.util.ContentType;
 
 /**
  * The action that deals with fetch news functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class FetchNewsAction extends ActionSupport implements RequestAware, SessionAware {

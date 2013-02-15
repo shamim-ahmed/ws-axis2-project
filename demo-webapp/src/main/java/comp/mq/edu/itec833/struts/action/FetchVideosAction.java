@@ -17,7 +17,7 @@ import comp.mq.edu.itec833.util.ContentType;
 
 /**
  * The action that deals with fetchh video functionality
- * @author Poopak Alaeifar
+ * @author Shamim Ahmed
  *
  */
 public class FetchVideosAction extends ActionSupport implements SessionAware, RequestAware {
